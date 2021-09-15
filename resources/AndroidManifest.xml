@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:versionCode="2" android:versionName="1.8.001" android:installLocation="auto" android:compileSdkVersion="29" android:compileSdkVersionCodename="10" package="com.sp.fighter" platformBuildVersionCode="29" platformBuildVersionName="10">
+    <uses-sdk android:minSdkVersion="19" android:targetSdkVersion="29"/>
+    <supports-screens android:anyDensity="true" android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" android:xlargeScreens="true"/>
+    <application android:label="@string/app_name" android:icon="@drawable/app_icon" android:name="com.eagle.mixsdk.sdk.EagleApplication" android:allowBackup="true" android:resizeableActivity="true" android:networkSecurityConfig="@xml/network_security_config" android:requestLegacyExternalStorage="true">
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar.Fullscreen" android:name="com.doraemon.util.PermissionUtils$PermissionActivity" android:screenOrientation="sensorLandscape" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustResize"/>
+        <activity android:label="@string/app_name" android:name="com.example.testrun.MainActivity" android:launchMode="standard" android:screenOrientation="landscape" android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="unityplayer.UnityActivity" android:value="true"/>
+            <meta-data android:name="unityplayer.ForwardNativeEventsToDalvik" android:value="true"/>
+            <meta-data android:name="android.max_aspect" android:value="2.8"/>
+            <meta-data android:name="unityplayer.SkipPermissionsDialog" android:value="true"/>
+        </activity>
+        <meta-data android:name="unity.build-id" android:value="9e9680f1-91eb-4d52-939c-682a6f80edae"/>
+        <meta-data android:name="ulog.enable" android:value="true"/>
+        <meta-data android:name="ulog.level" android:value="DEBUG"/>
+        <meta-data android:name="ulog.local" android:value="true"/>
+        <service android:name="com.zero.service.SimpleService">
+            <intent-filter android:priority="1000">
+                <action android:name="com.zero.service.SimpleService"/>
+            </intent-filter>
+        </service>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.xhuyu.component.p036ui.activity.SplashActivity" android:screenOrientation="landscape" android:configChanges="keyboardHidden|navigation|orientation|screenSize"/>
+        <activity android:theme="@style/Theme.Translucent" android:name="com.xhuyu.component.p036ui.activity.TallyOrderActivity" android:configChanges="keyboardHidden|navigation|orientation|screenSize"/>
+        <activity android:theme="@style/Theme.Translucent" android:name="com.xhuyu.component.p036ui.activity.UserCenterActivity" android:launchMode="singleTask" android:configChanges="keyboardHidden|navigation|orientation|screenSize"/>
+        <activity android:theme="@style/Theme.Translucent" android:name="com.xhuyu.component.p036ui.activity.MarketingActivity" android:configChanges="keyboardHidden|navigation|orientation|screenSize"/>
+        <activity android:theme="@style/Theme.Translucent" android:name="com.xhuyu.component.p036ui.activity.NoticeActivity" android:configChanges="keyboardHidden|navigation|orientation|screenSize"/>
+        <activity android:theme="@style/Theme.Translucent" android:name="com.xhuyu.component.p036ui.activity.LoginActivity" android:configChanges="keyboardHidden|navigation|orientation|screenSize"/>
+        <activity android:theme="@style/Theme.Translucent" android:name="com.xhuyu.component.p036ui.activity.PaymentActivity" android:configChanges="keyboardHidden|navigation|orientation|screenSize"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.xhuyu.component.p036ui.activity.WebBillingActivity" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="keyboardHidden|navigation|orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="twitter" android:host="post"/>
+            </intent-filter>
+        </activity>
+        <receiver android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.facebook.CustomTabMainActivity"/>
+        <activity android:name="com.facebook.CustomTabActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="fb2662368600743844"/>
+            </intent-filter>
+        </activity>
+        <provider android:name="com.facebook.internal.FacebookInitProvider" android:exported="false" android:authorities="com.sp.fighter.FacebookInitProvider"/>
+        <activity android:theme="@style/Theme.Translucent" android:name="com.facebook.FacebookActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <provider android:name="com.facebook.FacebookContentProvider" android:exported="true" android:authorities="com.facebook.app.FacebookContentProvider2662368600743844"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.android.billingclient.api.ProxyBillingActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:exported="false"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:exported="false" android:excludeFromRecents="true"/>
+        <service android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" android:exported="true"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <receiver android:name="com.google.android.gms.measurement.AppMeasurementReceiver" android:enabled="true" android:exported="false"/>
+        <service android:name="com.google.android.gms.measurement.AppMeasurementService" android:enabled="true" android:exported="false"/>
+        <service android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:enabled="true" android:exported="false"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.google.firebase.auth.internal.FederatedSignInActivity" android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN" android:exported="true" android:excludeFromRecents="true" android:launchMode="singleTask"/>
+        <service android:name="com.google.firebase.components.ComponentDiscoveryService" android:exported="false">
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+        </service>
+        <provider android:name="com.google.firebase.provider.FirebaseInitProvider" android:exported="false" android:authorities="com.sp.fighter.firebaseinitprovider" android:initOrder="100"/>
+        <receiver android:name="com.appsflyer.MultipleInstallBroadcastReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="HuYu_Game_Main_Activity" android:value="com.example.testrun.MainActivity"/>
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+    </application>
+    <uses-feature android:glEsVersion="20000"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="com.farsitel.bazaar.permission.PAY_THROUGH_BAZAAR"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.asus.msa.SupplementaryDID.ACCESS"/>
+</manifest>

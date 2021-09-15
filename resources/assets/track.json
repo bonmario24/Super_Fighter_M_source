@@ -1,0 +1,62 @@
+{
+  "events": [
+    {
+    "type": "click",
+    "id": "iv_facebook_login",
+    "action": "start_login",
+    "page": "csdk_login",
+    "submit": {
+      "login_type": 11
+    }
+  },
+    {
+      "type": "click",
+      "id": "rl_facebook_contains",
+      "action": "start_login",
+      "page": "csdk_login",
+      "submit": {
+        "login_type": 11
+      }
+    },
+    {
+      "type": "click",
+      "id": "rl_visitor_contains",
+      "action": "start_login",
+      "page": "csdk_login",
+      "submit": {
+        "login_type": 7
+      }
+    },
+    {
+      "type": "click",
+      "id": "rl_google_contains",
+      "action": "start_login",
+      "page": "csdk_login",
+      "submit": {
+        "login_type": 12
+      }
+    },
+    {
+      "type": "click",
+      "id": "iv_google_login",
+      "action": "start_login",
+      "page": "csdk_login",
+      "submit": {
+        "login_type": 12
+      }
+    }, {
+      "type": "click",
+      "id": "btn_switch",
+      "action": "login_cancle",
+      "page": "csdk_login",
+      "submit": {
+        "login_type": 10
+      }
+    }, {
+      "type": "page_enter",
+      "id": "PaymentActivity",
+      "action": "pay_pageview",
+      "page": "csdk_pay"
+    }
+  ]
+}

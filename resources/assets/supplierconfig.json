@@ -1,0 +1,25 @@
+{
+  "supplier": {
+    "vivo": {
+      "appid": "vivoAppid"
+    },
+    "xiaomi": {
+      "appid": "xiaomiAppid"
+    },
+    "huawei": {
+      "appid": "huaweiAppid"
+    },
+    "oppo": {
+      "appid": "oppoAppid"
+    },
+    "lenovo": {
+      "appid": "lenovoAppid"
+    },
+    "samsung": {
+      "appid": "samsungAppid"
+    },
+    "meizu": {
+      "appid": "meizuAppid"
+    }
+  }
+}

@@ -1,0 +1,1 @@
+<plugins><plugin name="com.eagle.mixsdk.sdk.HuYuUser" type="1" /><plugin name="com.eagle.mixsdk.sdk.HuYuPay" type="2" /><plugin name="com.eagle.mixsdk.sdk.HuYuTrack" type="10" /></plugins>
